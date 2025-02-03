@@ -52,3 +52,6 @@ $$
 conda create --name q_learning python=3.9
 pip install gymnasium
 pip install "gymnasium[toy-text]"
+
+# Reference
+The code is based on [youtube channel](https://www.youtube.com/watch?v=ZhoIgo3qqLU) and its [code](https://github.com/johnnycode8/gym_solutions)
