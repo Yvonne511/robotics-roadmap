@@ -13,3 +13,6 @@
     [Syllabus](https://docs.google.com/document/d/1G2kFN0XG3awY_FWd6_9gjfta0oRFlIwamLwZM6bv-xk/edit?pli=1&tab=t.0)  
 ### 2024 Winter
 - CS 285: Deep RL [Link to course content](https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps)
+### 2025 Spring
+- Deep Decision Making and Reinforcement Learning [Link to course content](https://nyu-robot-learning.github.io/decision-making-sp25/)
+- Learning with Large Language and Vision Models [Link to course content](https://www.sainingxie.com/llvm-fall23/)
