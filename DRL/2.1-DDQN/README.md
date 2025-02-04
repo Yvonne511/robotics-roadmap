@@ -1,5 +1,5 @@
 # Double Deep Q-network
-The paper this concept originates from is [Deep Reinforcement Learning with Double Q-learning](https://arxiv.org/pdf/1509.06461)
+The paper this concept originates from is [Deep Reinforcement Learning with Double Q-learning](https://arxiv.org/pdf/1509.06461) (2015)
 
 ## Paper Review (Key insights)
 Instead of using the standard DQN update:
