@@ -1,6 +1,6 @@
 # Deep Q-network
 The paper this concept originates from is [Human-level control through deep reinforcement
-learning](https://www.nature.com/articles/nature14236)
+learning](https://www.nature.com/articles/nature14236) (2015)
 
 ## Paper Review (Key insights)
 **Experience replay is used to stablize Q-value**
