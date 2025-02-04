@@ -27,11 +27,12 @@ y = r + \gamma \max_{a'} Q(s', a'; \theta_i^-)
 \nabla_{\theta_i} Q(s,a; \theta_i)
 \right]
 ```
-- During each iteration, trajectories are obstained using $Q$, Q-function; target network $\hat{Q}(\theta)$ is updated using experience replay. At end of iteration, $ Q\leftarrow \hat{Q}$.
+- During each iteration, trajectories are obstained using $Q$, Q-function; target network $\hat{Q}(\theta)$ is updated using experience replay. At end of iteration, $Q\leftarrow \hat{Q}$.
 
 ## Algorithm
 **DQN Data Flow (from [Pytorch Tutorial](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html))**  
 <img src="dqn.jpg" width="600" />  
+
 **DQN Algorithm (from Paper [Human-level control through deep reinforcement
 learning](https://www.nature.com/articles/nature14236))**  
 <img src="dqn_algo.png" width="600" />
