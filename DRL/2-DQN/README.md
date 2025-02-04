@@ -13,10 +13,10 @@ $$
 
 **Q-network is a neural network function approximator with weights $\theta$**
 - Q-network is trained to adjust parameters $\theta_i$ at iteration i
-$$
+```math
 L_i(\theta_i) = \mathbb{E}_{s,a,r} \left[ \left(\mathbb{E}_{s'}[y | s,a] - Q(s,a; \theta_i) \right)^2 \right]
 = \mathbb{E}_{s,a,r,s'} \left[ \left( y - Q(s,a; \theta_i) \right)^2 \right] + \mathbb{E}_{s,a,r} \left[ \mathbb{V}_{s'} [y] \right]
-$$
+```
 $$
 y = r + \gamma \max_{a'} Q(s', a'; \theta_i^-)
 \text{ from some previous iterations $\theta_{i-1}$}
