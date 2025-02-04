@@ -12,7 +12,7 @@
 - a reward function $R(s, a)$
 
 ## Q-value
-Expected cumulative reward an agent can obtain from a given state-action pair while following an optimal policy<br>
+Expected cumulative reward an agent can obtain from a given state-action pair while following an optimal policy  
 What reward can obtain by taking action $a$ at state $s$ under policy $\pi$?
 $$
 Q^\pi(s, a) = \mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t r_t \mid s_0 = s, a_0 = a, \pi \right]
@@ -24,7 +24,7 @@ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s,
 $$
 ### Derivation
 #### Bellman Equation for Q-values
-The recursive relationship between the Q-values <br>
+The recursive relationship between the Q-values  
 Optimal Q-value of a state-action pair is equal to the immediate reward plus the best possible discounted future reward
 $$
 Q^*(s, a) = \mathbb{E} \left[ r + \gamma \max_{a'} Q^*(s', a') \mid s, a \right]
