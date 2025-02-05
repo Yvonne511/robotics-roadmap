@@ -28,25 +28,15 @@ The paper this concept originates from is [Continuous control with deep reinforc
         - Execute action $a_t$, observe **reward** $r_t$ and **next state** $s_{t+1}$
         - Store **transition** $(s_t, a_t, r_t, s_{t+1})$ in replay buffer $\mathcal{D}$
         ---
-        After collecting enough experiences:
-        1. Sample **mini-batch** of $N$ transitions $(s_i, a_i, r_i, s'_i)$ from buffer $\mathcal{D}$.
-        2. Compute **target Q-value** using target networks: 
-        ```math
-        y_i = r_i + \gamma Q'(s'_i, \mu'(s'_i | \theta^{\mu'}) | \theta^{Q'})
-        ```
-        3. **Critic Loss**: Minimize the **Mean Squared Error (MSE)** loss: 
-        ```math
-        L(\theta^Q) = \frac{1}{N} \sum_i (y_i - Q(s_i, a_i | \theta^Q))^2
-        ```
-        4. **Actor Update** (using policy gradient):
-        ```math
-        \nabla_{\theta^\mu} J \approx \frac{1}{N} \sum_i \nabla_a Q(s, a | \theta^Q) |_{a = \mu(s)} \nabla_{\theta^\mu} \mu(s | \theta^\mu)
-        ```
-        5. **Update target networks** with soft update:
-        ```math
-        \theta^{Q'} \leftarrow \tau \theta^Q + (1 - \tau) \theta^{Q'}
-        ```
-        ```math
-        \theta^{\mu'} \leftarrow \tau \theta^\mu + (1 - \tau) \theta^{\mu'}
-        ```
-        where $\tau \ll 1$ (e.g., 0.001) is a small update rate.
+3. After collecting enough experiences (**inside episode**):
+    1. Sample **mini-batch** of $N$ transitions $(s_i, a_i, r_i, s'_i)$ from buffer $\mathcal{D}$.
+    2. Compute **target Q-value** using target networks:  
+    $y_i = r_i + \gamma Q'(s'_i, \mu'(s'_i | \theta^{\mu'}) | \theta^{Q'})$
+    3. **Critic Loss**: Minimize the **Mean Squared Error (MSE)** loss:  
+    $L(\theta^Q) = \frac{1}{N} \sum_i (y_i - Q(s_i, a_i | \theta^Q))^2$
+    4. **Actor Update** (using policy gradient):  
+    $\nabla_{\theta^\mu} J \approx \frac{1}{N} \sum_i \nabla_a Q(s, a | \theta^Q) |_{a = \mu(s)} \nabla_{\theta^\mu} \mu(s | \theta^\mu)$
+    5. **Update target networks** with soft update:  
+    $\theta^{Q'} \leftarrow \tau \theta^Q + (1 - \tau) \theta^{Q'}$  
+    $\theta^{\mu'} \leftarrow \tau \theta^\mu + (1 - \tau) \theta^{\mu'}$  
+    where $\tau \ll 1$ (e.g., 0.001) is a small update rate.
