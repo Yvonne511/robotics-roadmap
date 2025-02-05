@@ -28,7 +28,7 @@ The paper this concept originates from is [Continuous control with deep reinforc
         - Execute action $a_t$, observe **reward** $r_t$ and **next state** $s_{t+1}$
         - Store **transition** $(s_t, a_t, r_t, s_{t+1})$ in replay buffer $\mathcal{D}$
         ---
-        - After collecting enough experiences:
+        After collecting enough experiences:
         1. Sample **mini-batch** of $N$ transitions $(s_i, a_i, r_i, s'_i)$ from buffer $\mathcal{D}$.
         2. Compute **target Q-value** using target networks: 
         ```math
