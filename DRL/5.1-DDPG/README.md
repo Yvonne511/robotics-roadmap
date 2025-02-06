@@ -8,6 +8,7 @@ The paper this concept originates from is [Continuous control with deep reinforc
 - **Deterministic policy**: Unlike stochastic policies in policy gradient methods
 - **Exploration with noise**: Uses Ornstein-Uhlenbeck noise for exploration
 - **Target networks**: Helps in stabilizing training
+- <ins>unstable to train</ins>
 
 ## Algorithm
 **Input:**  
