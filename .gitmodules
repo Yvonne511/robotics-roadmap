@@ -1,0 +1,3 @@
+[submodule "DL/NYU_DL/NYU-DLSP20"]
+	path = DL/NYU_DL/NYU-DLSP20
+	url = https://github.com/Atcold/NYU-DLSP20.git
