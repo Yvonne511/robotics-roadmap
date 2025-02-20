@@ -36,7 +36,7 @@ The paper this concept originates from is [Continuous control with deep reinforc
     3. **Critic Loss**: Minimize the **Mean Squared Error (MSE)** loss:  
     $L(\theta^Q) = \frac{1}{N} \sum_i (y_i - Q(s_i, a_i | \theta^Q))^2$
     4. **Actor Update** (using policy gradient):  
-    $\nabla_{\theta^\mu} J \approx \frac{1}{N} \sum_{i} \nabla_a Q(s, a | \theta^Q) \Big|_{a = \mu(s)} \nabla_{\theta^\mu} \mu(s | \theta^\mu)$
+    $\nabla_{\theta^\mu} J \approx \frac{1}{N} \sum_{i} \nabla_a Q(s_i, a; \theta^Q) \text{ at } a = \mu(s_i) \cdot \nabla_{\theta^\mu} \mu(s_i | \theta^\mu)$
     5. **Update target networks** with soft update:  
     $\theta^{Q'} \leftarrow \tau \theta^Q + (1 - \tau) \theta^{Q'}$  
     $\theta^{\mu'} \leftarrow \tau \theta^\mu + (1 - \tau) \theta^{\mu'}$  
