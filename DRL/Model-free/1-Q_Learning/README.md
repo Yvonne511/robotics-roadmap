@@ -15,7 +15,6 @@ Expected cumulative reward an agent can obtain from a given state-action pair wh
 What reward can obtain by taking action $a$ at state $s$ under policy $\pi$?
 ```math
 Q^\pi(s, a) = \mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t r_t \mid s_0 = s, a_0 = a, \pi \right]
-$$
 ```
 ## Q-Value Update Equation
 ```math
