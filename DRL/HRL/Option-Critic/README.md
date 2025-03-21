@@ -1,0 +1,22 @@
+# Option-Critic
+The paper this concept originates from is [The Option-Critic Architecture](https://arxiv.org/abs/1609.05140) (2016)
+
+## Paper Review (Key insights)
+- **intra-option policy gradients**: allow options to be updated without waiting for termination.
+- **termination gradient**: optimize when to continue or terminate an option.
+- **temporal abstraction**: options can improve exploration and stability in reinforcement learning.
+- The method is applicable to both tabular and function-approximation settings, making it compatible with deep RL methods.
+- :warning: Non modularity: learned options are not well-defined behaviors and cannot generalize other configurations.
+
+
+## Algorithm
+The Option-Critic architecture extends **actor-critic** with **options**.
+Each option is defined by:
+1. **An intra-option policy** $\pi(o)$ dictating actions within the option.
+2. **A termination function** $\beta(o)$ deciding when to switch options.
+3. **A policy-over-options** $\pi_{\Omega}(s)$, which chooses among available options.
+
+The objective function is optimized via **option-value functions**:
+```math
+Q_{\Omega}(s, o) = \mathbb{E} \Big[ \sum_{t=0}^{\infty} \gamma^t r_t \Big| s_0 = s, o_0 = o \Big]
+```
