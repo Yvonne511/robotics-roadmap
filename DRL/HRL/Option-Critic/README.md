@@ -16,7 +16,7 @@ Each option is defined by:
 2. **A termination function** $\beta_{\omega, \theta}$ deciding when to switch options.
 3. **A policy-over-options** $\pi_{\Omega}$, which chooses among available options.
 # add an image
-<img src="oc_diagram.png" width="600" />
+<img src="oc_diagram.png" width="200" />
 
 The objective function is optimized via **option-value functions**:
 ```math
@@ -25,4 +25,4 @@ Q_{\Omega}(s, \omega) = \sum_{a} \pi_{\omega, \theta} (a \mid s) Q_{U}(s, \omega
 ```math
 Q_U(s, \omega, a) = r(s, a) + \gamma \sum_{s'} P(s' \mid s, a) U(\omega, s')
 ```
-<img src="oc_diagram.png" width="600" />
+<img src="oc_algo.png" width="400" />
