@@ -16,7 +16,7 @@ Each option is defined by:
 2. **A termination function** $\beta_{\omega, \theta}$ deciding when to switch options.
 3. **A policy-over-options** $\pi_{\Omega}$, which chooses among available options.
 # add an image
-<img src="oc_diagram.png" width="200" />
+<img src="oc_diagram.png" width="350" />
 
 The objective function is optimized via **option-value functions**:
 ```math
