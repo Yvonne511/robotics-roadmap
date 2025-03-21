@@ -12,11 +12,11 @@ The paper this concept originates from is [The Option-Critic Architecture](https
 ## Algorithm
 The Option-Critic architecture extends **actor-critic** with **options**.
 Each option is defined by:
-1. **An intra-option policy** $\pi(o)$ dictating actions within the option.
-2. **A termination function** $\beta(o)$ deciding when to switch options.
+1. **An intra-option policy** $\pi_\omega$ dictating actions within the option.
+2. **A termination function** $\beta(\omega)$ deciding when to switch options.
 3. **A policy-over-options** $\pi_{\Omega}(s)$, which chooses among available options.
 
 The objective function is optimized via **option-value functions**:
 ```math
-Q_{\Omega}(s, o) = \mathbb{E} \Big[ \sum_{t=0}^{\infty} \gamma^t r_t \Big| s_0 = s, o_0 = o \Big]
+Q_{\Omega}(s, w) = \mathbb{E} \Big[ \sum_{t=0}^{\infty} \gamma^t r_t \Big| s_0 = s, w_0 = w \Big]
 ```
