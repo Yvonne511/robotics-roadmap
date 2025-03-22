@@ -30,6 +30,6 @@ The Manager maximizes the **extrinsic reward** by learning to emit goal directio
 
 ---
 
-<img src="FuN.png" width="450" />
+<img src="FuN.png" width="600" />
 
 ---
