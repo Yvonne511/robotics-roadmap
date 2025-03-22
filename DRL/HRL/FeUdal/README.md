@@ -28,8 +28,4 @@ where $s_t$ and $s_{t+c}$ are state embeddings and $g_t$ is the goal from the Ma
 ### Manager Optimization:
 The Manager maximizes the **extrinsic reward** by learning to emit goal directions that lead the Worker to maximize future returns
 
----
-
 <img src="FuN.png" width="600" />
-
----
