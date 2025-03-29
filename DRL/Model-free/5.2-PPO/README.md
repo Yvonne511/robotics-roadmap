@@ -10,13 +10,38 @@ In RL, policies are not trained on static datasets. Instead, they generate their
 
 PPO addresses this by **constraining policy updates**, avoiding large destructive changes during training.
 
-#### 1. Vanilla Policy Gradient
+#### 1. Vanilla Policy Gradient (REINFORCE)
 - Updates the policy directly in the direction that increases expected return.
 - Prone to instability due to large policy updates.
+<img src="reinforce.jpg" width="600" />  
 #### 2. TRPO
 - Adds a trust region constraint to prevent large policy shifts using KL divergence.
-- Involves solving a constrained optimization problem, which is complex and computationally expensive.
+- Involves solving a constrained optimization problem (add overhead), which is complex and computationally expensive.
+
+```math
+\max_\theta \; \mathbb{E}_{(s, a) \sim \pi_{\theta_{\text{old}}}} \left[ \frac{\pi_\theta(a | s)}{\pi_{\theta_{\text{old}}}(a | s)} A^{\pi_{\theta_{\text{old}}}}(s, a) \right]
+```
+
+subject to:
+
+```math
+\mathbb{E}_{s \sim \pi_{\theta_{\text{old}}}} \left[ D_{\mathrm{KL}}\left( \pi_{\theta_{\text{old}}}(\cdot|s) \| \pi_\theta(\cdot|s) \right) \right] \leq \delta
+```
 #### 3. PPO
 - Simplifies TRPO by using a **clipped surrogate objective**.
 - Avoids the complexity of second-order optimization.
 - Allows multiple epochs of minibatch updates using the same data.
+
+```math
+\max_\theta \; \mathbb{E}_{(s, a) \sim \pi_{\theta_{\text{old}}}} \left[
+\min \left( r_\theta(s, a) A^{\pi_{\theta_{\text{old}}}}(s, a),
+\; \text{clip}\left(r_\theta(s, a), 1 - \epsilon, 1 + \epsilon\right) A^{\pi_{\theta_{\text{old}}}}(s, a)
+\right)
+\right]
+```
+
+where:
+
+```math
+r_\theta(s, a) = \frac{\pi_\theta(a | s)}{\pi_{\theta_{\text{old}}}(a | s)}
+```
